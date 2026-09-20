@@ -1,1 +1,54 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  font-family: 'Vazirmatn', sans-serif;
+  color: #172033;
+  background: #f6f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; background: #f6f7fb; }
+html:has(.dark) { background: #090b18; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, canvas { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+
+.stat-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 5px;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 18px;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 2px 9px rgb(15 23 42 / 0.04);
+}
+.stat-card span { font-size: 11px; font-weight: 800; color: #64748b; }
+.stat-card b { grid-column: 1 / -1; margin-top: 3px; font-size: 18px; line-height: 1.2; font-weight: 900; }
+.dark .stat-card { border-color: rgb(255 255 255 / 0.1); background: rgb(255 255 255 / 0.055); }
+.dark .stat-card span { color: #cbd5e1; }
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 20px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 2px 9px rgb(15 23 42 / 0.035);
+}
+.dark .info-card { border-color: rgb(255 255 255 / 0.1); background: rgb(255 255 255 / 0.055); }
+.info-icon { display: grid; height: 38px; width: 38px; flex: none; place-items: center; border-radius: 13px; }
+.info-card h2 { margin: 0; font-size: 14px; font-weight: 900; }
+.info-card p { margin: 4px 0 0; font-size: 12px; line-height: 1.75; color: #64748b; }
+.dark .info-card p { color: #cbd5e1; }
+
+@media (min-width: 640px) {
+  .stat-card { padding: 13px 15px; }
+  .stat-card span { font-size: 12px; }
+  .stat-card b { font-size: 22px; }
+}
