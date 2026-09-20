@@ -46,7 +46,7 @@ function App() {
   const [paused, setPaused] = useState(false);
   const [over, setOver] = useState(false);
   const [score, setScore] = useState(0);
-  const [best, setBest] = useState(() => Number(localStorage.getItem('shadow-jump-best') || 0));
+  const [best, setBest] = useState(0);
   const [coins, setCoins] = useState(0);
   const [speed, setSpeed] = useState(SPEED);
   const [stage, setStage] = useState<StageId>('street');
